@@ -1,0 +1,3531 @@
+<!DOCTYPE html>
+<html lang="en" class="intro-locked">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Olivia & Ethan - Wedding Invitation</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:wght@400;500;600;700&family=Pinyon+Script&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+/* =================================
+   GLOBAL SETTINGS
+================================= */
+
+:root {
+    --reveal-y: 0px;
+    --reveal-softness: 85px;
+    --maroon: #801b38;
+    --deep-maroon: #671329;
+    --soft-maroon: #a34b61;
+    --gold: #ae8755;
+    --cream: #fbf9f5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background: #f8efe0;
+    overflow-x: hidden;
+}
+
+/* =================================
+   LOCK SCROLL BEFORE STARTING
+================================= */
+
+html.intro-locked {
+    height: 100%;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+html.intro-locked body {
+    height: 100%;
+    overflow: hidden !important;
+    overscroll-behavior: none;
+}
+
+/* =================================
+   SHARED SECTION SETTINGS
+================================= */
+
+.hero,
+.couple-section,
+.parents-section,
+.fourth-section,
+.fifth-section {
+    position: relative;
+    width: min(100%, 56.25vh);
+    height: 100vh;
+    height: 100svh;
+    margin: 0 auto;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+/* =================================
+   FIRST SECTION - HERO
+================================= */
+
+.hero {
+    background-image: url("Assets/roadbg.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 100%;
+}
+
+/* =================================
+   INVITATION REVEAL LAYER
+================================= */
+
+.invitation {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+    visibility: hidden;
+
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        #000 0,
+        #000 calc(var(--reveal-y) - var(--reveal-softness)),
+        rgba(0,0,0,.85) var(--reveal-y),
+        transparent calc(var(--reveal-y) + var(--reveal-softness)),
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        #000 0,
+        #000 calc(var(--reveal-y) - var(--reveal-softness)),
+        rgba(0,0,0,.85) var(--reveal-y),
+        transparent calc(var(--reveal-y) + var(--reveal-softness)),
+        transparent 100%
+    );
+
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.hero.is-started .invitation {
+    visibility: visible;
+}
+
+/* =================================
+   INVITATION CONTENT
+================================= */
+
+.invitation-content {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    text-align: center;
+    padding: clamp(14px, 3svh, 30px) 12px;
+}
+
+/* =================================
+   FIRST SECTION HEADING
+================================= */
+
+.invitation-heading {
+    width: 100%;
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(42px, 12vw, 58px);
+    line-height: 1.15;
+    color: #8e1538;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: clamp(10px, 2svh, 18px);
+}
+
+.invitation-heading span {
+    display: block;
+}
+
+/* =================================
+   FIRST SECTION SUBTITLE
+================================= */
+
+.invitation-subtitle {
+    width: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 3.3vw, 15px);
+    font-weight: 600;
+    letter-spacing: clamp(2px, .8vw, 4px);
+    color: #9d7429;
+    text-align: center;
+    margin-bottom: clamp(14px, 2.5svh, 25px);
+}
+
+/* =================================
+   DECORATIVE COUPLE FRAME
+================================= */
+
+.couple-monogram {
+    position: relative;
+    width: min(64vw, 250px, calc(100% - 48px));
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    container-type: inline-size;
+    container-name: monogram;
+}
+
+/* =================================
+   CIRCLE ORNAMENT
+================================= */
+
+.monogram-frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* =================================
+   INITIALS CONTAINER
+================================= */
+
+.monogram-initials {
+    position: relative;
+    z-index: 1;
+    width: 78%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    white-space: nowrap;
+    gap: 0.8cqw;
+    transform: translateY(-1%);
+}
+
+/* =================================
+   INITIAL LETTERS
+================================= */
+
+.monogram-letter {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(38px, 23cqw, 58px);
+    font-weight: 400;
+    line-height: 1;
+    color: #8e1538;
+    display: inline-block;
+    flex: 0 0 auto;
+}
+
+/* =================================
+   AMPERSAND
+================================= */
+
+.monogram-symbol {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(28px, 15cqw, 38px);
+    font-weight: 400;
+    line-height: 1;
+    color: #bd8c36;
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-top: 1.5cqw;
+}
+
+/* =================================
+   FIRST SECTION FOOTER
+================================= */
+
+.invitation-footer {
+    width: 100%;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 3vw, 13px);
+    letter-spacing: clamp(1.5px, .65vw, 3px);
+    font-weight: 600;
+    color: #9d7429;
+    text-align: center;
+    margin-top: clamp(14px, 2.5svh, 25px);
+}
+
+/* =================================
+   WEDDING CAR
+================================= */
+
+.car-container {
+    position: absolute;
+    top: clamp(-135px, -14vh, -85px);
+    left: 50%;
+    width: clamp(190px, 57vw, 286px);
+    z-index: 3;
+
+    transform: translate3d(-50%, 0, 0);
+
+    pointer-events: none;
+    will-change: transform, opacity;
+
+    opacity: 1;
+    visibility: visible;
+
+    transition:
+        opacity .55s ease,
+        visibility 0s;
+}
+
+.car-container img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    user-select: none;
+    -webkit-user-drag: none;
+
+    filter: drop-shadow(
+        0 12px 12px rgba(65, 25, 20, .13)
+    );
+}
+
+/* =================================
+   REMOVE CAR AFTER EXITING
+================================= */
+
+.car-container.is-exited {
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .55s ease,
+        visibility 0s linear .55s;
+}
+
+/* =================================
+   PREMIUM START BUTTON
+================================= */
+
+.start-button {
+    position: absolute;
+    left: 50%;
+    bottom: max(34px, 6.5vh);
+    transform: translateX(-50%);
+    z-index: 5;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    min-height: 39px;
+    max-width: calc(100% - 32px);
+    padding: 9px 20px 10px;
+
+    border: 1px solid rgba(222, 185, 112, .82);
+    border-radius: 999px;
+
+    background: linear-gradient(
+        135deg,
+        #941d3b 0%,
+        #79142f 52%,
+        #641026 100%
+    );
+
+    color: #fffaf0;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1.7px;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 13px rgba(69, 12, 29, .22),
+        0 1px 3px rgba(69, 12, 29, .16),
+        inset 0 1px 0 rgba(255,255,255,.24),
+        inset 0 -1px 0 rgba(0,0,0,.12);
+
+    transition:
+        opacity .65s ease,
+        transform .3s ease,
+        box-shadow .3s ease,
+        border-color .3s ease,
+        background .3s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.start-button::after {
+    content: "›";
+    display: inline-block;
+    color: #e8c783;
+    font-family: Georgia, serif;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: .7;
+    margin-top: -1px;
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+}
+
+.start-button:hover {
+    transform: translate(-50%, -2px);
+    border-color: #f0d49a;
+
+    box-shadow:
+        0 7px 17px rgba(69, 12, 29, .27),
+        0 0 0 3px rgba(189, 140, 54, .08),
+        inset 0 1px 0 rgba(255,255,255,.28);
+}
+
+.start-button:hover::after {
+    color: #fff0c9;
+    transform: translateX(3px);
+}
+
+.start-button:active {
+    transform: translate(-50%, 0) scale(.97);
+
+    box-shadow:
+        0 2px 7px rgba(69, 12, 29, .2),
+        inset 0 1px 3px rgba(0,0,0,.12);
+}
+
+.start-button:disabled {
+    cursor: default;
+}
+
+.hero.is-started .start-button {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, 12px);
+}
+
+/* =================================
+   SCROLL DOWN INDICATOR
+================================= */
+
+.scroll-down-indicator {
+    position: absolute;
+    left: 50%;
+    bottom: clamp(16px, 3vh, 28px);
+    transform: translateX(-50%);
+    z-index: 6;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+
+    border: none;
+    background: transparent;
+    color: #9d7429;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+
+    white-space: nowrap;
+    cursor: pointer;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity .7s ease,
+        visibility 0s linear .7s;
+}
+
+.hero.is-scroll-unlocked .scroll-down-indicator {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transition:
+        opacity .7s ease,
+        visibility 0s;
+}
+
+.scroll-down-arrow {
+    display: block;
+    font-family: Arial, sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    line-height: 1;
+    animation: scrollArrowMove 1.5s ease-in-out infinite;
+}
+
+@keyframes scrollArrowMove {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(7px);
+    }
+}
+
+.scroll-down-indicator:hover {
+    color: #891630;
+}
+
+.scroll-down-indicator:focus-visible {
+    outline: 2px solid #bd8c36;
+    outline-offset: 6px;
+    border-radius: 5px;
+}
+
+/* =================================
+   SECOND SECTION - COUPLE INTRO
+================================= */
+
+.couple-section {
+    background-color: #ffffff;
+
+    background-image:
+        linear-gradient(
+            to bottom,
+            rgba(2, 15, 54, .30) 0%,
+            rgba(2, 15, 54, .10) 24%,
+            transparent 48%
+        ),
+        url("Assets/couplenameimg.png");
+
+    background-repeat: no-repeat;
+    background-position: center center;
+
+    background-size:
+        100% 100%,
+        auto 100%;
+}
+
+/* =================================
+   SECOND SECTION TEXT AREA
+================================= */
+
+.couple-section-content {
+    position: absolute;
+    top: clamp(30px, 5.5svh, 65px);
+    left: 0;
+    right: 0;
+    width: 100%;
+
+    padding: 0 clamp(12px, 4vw, 22px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    z-index: 2;
+}
+
+/* =================================
+   SECOND SECTION OVERLINE
+================================= */
+
+.couple-overline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 2.8vw, 13px);
+    font-weight: 600;
+    letter-spacing: clamp(2px, .8vw, 4px);
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+/* =================================
+   SHINING WHITE TEXT
+================================= */
+
+.shine-text {
+    color: #ffffff;
+
+    background: linear-gradient(
+        110deg,
+        #ffffff 0%,
+        #d8e8ff 18%,
+        #ffffff 32%,
+        #a9caff 45%,
+        #ffffff 56%,
+        #e8f2ff 72%,
+        #ffffff 100%
+    );
+
+    background-size: 250% 100%;
+    background-position: 100% center;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    filter: drop-shadow(
+        0 0 5px rgba(255,255,255,.55)
+    );
+
+    animation: whiteShimmer 5s ease-in-out infinite;
+}
+
+/* =================================
+   SECOND SECTION COUPLE NAMES
+================================= */
+
+.couple-section-names {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(40px, 11vw, 58px);
+    font-weight: 400;
+    line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
+    letter-spacing: 0;
+    margin: 0;
+}
+
+/* =================================
+   SECOND SECTION TAGLINE
+================================= */
+
+.couple-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(10px, 2.8vw, 14px);
+    font-weight: 600;
+    letter-spacing: clamp(1.5px, .6vw, 3px);
+    text-transform: uppercase;
+    margin-top: 10px;
+}
+
+/* =================================
+   SHIMMER ANIMATION
+================================= */
+
+@keyframes whiteShimmer {
+    0% {
+        background-position: 100% center;
+    }
+
+    50% {
+        background-position: 0% center;
+    }
+
+    100% {
+        background-position: -100% center;
+    }
+}
+
+/* =================================
+   THIRD SECTION - PARENTS
+================================= */
+
+.parents-section {
+    height: auto;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--deep-maroon);
+}
+
+/* =================================
+   PARENTS CONTENT
+================================= */
+
+.parents-section-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        clamp(35px, 6svh, 60px)
+        clamp(20px, 5vw, 30px);
+
+    gap: 0;
+}
+
+/* =================================
+   PARENTS OVERLINE
+================================= */
+
+.parents-overline {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(10px, 2.9vw, 13px);
+    font-weight: 600;
+
+    letter-spacing: clamp(2px, .85vw, 4px);
+
+    text-transform: uppercase;
+
+    color: var(--soft-maroon);
+
+    margin-bottom: clamp(15px, 2.6svh, 22px);
+}
+
+/* =================================
+   PARENTS INTRODUCTION
+================================= */
+
+.parents-intro {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(16px, 4.5vw, 19px);
+    font-weight: 500;
+
+    line-height: 1.45;
+
+    color: #68545a;
+
+    margin-bottom: clamp(10px, 2svh, 17px);
+}
+
+/* =================================
+   GROOM AND BRIDE NAMES
+================================= */
+
+.parents-couple-name {
+    width: 100%;
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(43px, 12vw, 61px);
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    color: var(--maroon);
+
+    text-align: center;
+
+    margin: 0;
+}
+
+/* =================================
+   PARENTS DETAILS
+================================= */
+
+.parents-details {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(13px, 3.7vw, 16px);
+    font-weight: 500;
+
+    line-height: 1.4;
+
+    color: #76656a;
+
+    text-align: center;
+
+    margin-top: clamp(4px, 1svh, 8px);
+}
+
+.parents-details span {
+    display: block;
+}
+
+/* =================================
+   WITH TEXT
+================================= */
+
+.parents-with {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(24px, 6.5vw, 31px);
+
+    color: var(--soft-maroon);
+
+    line-height: 1.2;
+
+    margin:
+        clamp(11px, 2svh, 17px)
+        0;
+}
+
+/* =================================
+   DECORATIVE DIVIDER
+================================= */
+
+.parents-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(120px, 32%);
+
+    margin: 0 auto clamp(13px, 2.5svh, 20px);
+
+    gap: 9px;
+}
+
+.parents-divider::before,
+.parents-divider::after {
+    content: "";
+
+    height: 1px;
+    flex: 1;
+
+    background: rgba(128, 27, 56, .35);
+}
+
+.parents-divider span {
+    display: block;
+
+    width: 6px;
+    height: 6px;
+
+    background: var(--gold);
+
+    transform: rotate(45deg);
+}
+
+/* =================================
+   FOURTH SECTION - SAVE THE DATE
+================================= */
+
+.fourth-section {
+    height: auto;
+    background: #ffffff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        clamp(35px, 6svh, 60px)
+        0;
+}
+
+.save-date {
+    --sd-maroon: #801b38;
+    --sd-maroon-soft: #a34b61;
+    --sd-muted: #7d6168;
+    --sd-line: #e6d2d8;
+    --sd-gold: #ae8755;
+
+    width: 100%;
+    text-align: center;
+    color: var(--sd-maroon);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+
+    container-type: inline-size;
+    container-name: savedate;
+}
+
+.sd-title {
+    font-family: 'Pinyon Script', 'Snell Roundhand', cursive;
+    font-weight: 400;
+    font-size: clamp(38px, 13cqw, 58px);
+    line-height: 1.1;
+    margin: 0 0 4px;
+    color: var(--sd-maroon);
+    padding: 0 16px;
+}
+
+.sd-panel {
+    position: relative;
+    width: 100%;
+    min-height: max(280px, calc(75cqw + 50px));
+}
+
+/* ---------- ribbon stage ---------- */
+
+.sd-stage {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    outline: none;
+}
+
+.sd-stage:focus-visible {
+    outline: 2px solid var(--sd-maroon-soft);
+    outline-offset: 8px;
+    border-radius: 8px;
+}
+
+.sd-band {
+    position: absolute;
+    top: 50.33%;
+    height: 6%;
+    width: 56.5%;
+    background: linear-gradient(180deg,#3d0a1a 0%,#5c1129 16%,#8e2445 38%,#a34b61 48%,#7a1d3a 60%,#5a1028 84%,#3a0917 100%);
+    box-shadow: 0 7px 9px -2px rgba(74,13,30,.32), 0 1px 2px rgba(74,13,30,.45);
+    overflow: hidden;
+}
+
+.sd-band.l { right: 50%; }
+.sd-band.r { left: 50%; }
+
+.sd-band::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(90deg, rgba(255,255,255,.05) 0 1px, transparent 1px 3px);
+}
+
+.sd-band::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, transparent, rgba(255,255,255,.55) 50%, transparent) no-repeat;
+    background-size: 30% 100%;
+    animation: sdSheen 6s ease-in-out infinite;
+}
+
+.sd-band.r::after { animation-delay: .4s; }
+
+@keyframes sdSheen {
+    0% { background-position: -120% 0; }
+    55%, 100% { background-position: 260% 0; }
+}
+
+.sd-bow {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+.sd-hl {
+    animation: sdTw 4.5s ease-in-out infinite;
+}
+
+@keyframes sdTw {
+    0%, 100% { opacity: .55; }
+    50% { opacity: 1; }
+}
+
+.sd-tailL,
+.sd-tailR,
+.sd-loopL,
+.sd-loopR,
+.sd-knot {
+    transform-box: view-box;
+}
+
+.sd-tailL {
+    transform-origin: 196px 172px;
+    animation: sdSwayL 5.5s ease-in-out infinite;
+}
+
+.sd-tailR {
+    transform-origin: 204px 172px;
+    animation: sdSwayR 6.3s ease-in-out infinite;
+}
+
+@keyframes sdSwayL {
+    0%, 100% { transform: rotate(-.9deg); }
+    50% { transform: rotate(1.3deg); }
+}
+
+@keyframes sdSwayR {
+    0%, 100% { transform: rotate(1deg); }
+    50% { transform: rotate(-1.2deg); }
+}
+
+.sd-knot,
+.sd-loopL,
+.sd-loopR {
+    transform-origin: 200px 162px;
+}
+
+.sd-hint {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: calc(75cqw + 4px);
+    margin: 0;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--sd-maroon-soft);
+    animation: sdPulse 2.6s ease-in-out infinite;
+    padding: 0 16px;
+}
+
+@keyframes sdPulse {
+    0%, 100% { opacity: .6; }
+    50% { opacity: 1; }
+}
+
+/* ---------- untie sequence ---------- */
+
+.sd-panel.open .sd-stage { pointer-events: none; }
+
+.sd-panel.open .sd-hint {
+    animation: none;
+    opacity: 0;
+    transition: opacity .4s;
+}
+
+.sd-panel.open .sd-knot {
+    animation: sdKnotOut 1s cubic-bezier(.5,0,.4,1) forwards;
+}
+
+.sd-panel.open .sd-loopL,
+.sd-panel.open .sd-loopR {
+    animation: sdLoopOut 1s .3s cubic-bezier(.55,0,.4,1) forwards;
+}
+
+.sd-panel.open .sd-tailL {
+    animation: sdTailL 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+.sd-panel.open .sd-tailR {
+    animation: sdTailR 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+.sd-panel.open .sd-band.l {
+    animation: sdBandL 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+.sd-panel.open .sd-band.r {
+    animation: sdBandR 1.5s .3s cubic-bezier(.55,0,.3,1) forwards;
+}
+
+@keyframes sdKnotOut {
+    0% { transform: scale(1); }
+    18% { transform: scale(1.1, .92) rotate(-5deg); }
+    42% { transform: scale(.9) rotate(4deg); }
+    100% { transform: scale(.05); opacity: 0; }
+}
+
+@keyframes sdLoopOut {
+    0% { transform: scale(1); }
+    22% { transform: scale(1.08, 1.12); }
+    100% { transform: scale(.04, .22); opacity: 0; }
+}
+
+@keyframes sdTailL {
+    0% { transform: rotate(0); }
+    18% { transform: translate(0, -4px) rotate(5deg); }
+    100% { transform: translate(calc(var(--outU) * -1), 12px) rotate(-5deg); }
+}
+
+@keyframes sdTailR {
+    0% { transform: rotate(0); }
+    18% { transform: translate(0, -4px) rotate(-5deg); }
+    100% { transform: translate(var(--outU), 12px) rotate(5deg); }
+}
+
+@keyframes sdBandL {
+    0% { transform: none; }
+    18% { transform: translateX(3px); }
+    100% { transform: translateX(calc(var(--outPx) * -1)); }
+}
+
+@keyframes sdBandR {
+    0% { transform: none; }
+    18% { transform: translateX(-3px); }
+    100% { transform: translateX(var(--outPx)); }
+}
+
+/* ---------- date details ---------- */
+
+.sd-details {
+    position: absolute;
+    top: 4px;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+    padding: 0 16px;
+}
+
+.sd-details > * {
+    opacity: 0;
+}
+
+.sd-panel.open .sd-details > * {
+    animation: sdRise .9s cubic-bezier(.2,.7,.2,1) forwards;
+    animation-delay: calc(1.55s + var(--i) * .13s);
+}
+
+@keyframes sdRise {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+        filter: blur(5px);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+        filter: none;
+    }
+}
+
+.sd-small {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: .32em;
+    text-transform: uppercase;
+    color: var(--sd-maroon-soft);
+}
+
+.sd-dow {
+    margin-top: 14px;
+}
+
+.sd-dateRow {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    width: 100%;
+    margin-top: 14px;
+    gap: 6px;
+}
+
+.sd-side {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 1px solid var(--sd-line);
+    border-bottom: 1px solid var(--sd-line);
+}
+
+.sd-day {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(40px, 20cqw, 84px);
+    line-height: 1;
+    color: var(--sd-maroon);
+    padding: 0 10px;
+}
+
+.sd-time {
+    margin-top: 12px;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: clamp(16px, 4.5cqw, 20px);
+    color: var(--sd-muted);
+}
+
+.sd-togo {
+    margin-top: clamp(20px, 8cqw, 42px);
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(15px, 4.3cqw, 19px);
+    color: var(--sd-gold);
+}
+
+.sd-count {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    margin-top: 14px;
+}
+
+.sd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2px 0;
+}
+
+.sd-unit + .sd-unit {
+    border-left: 1px solid #e6d2d8;
+}
+
+.sd-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: clamp(22px, 8.5cqw, 38px);
+    line-height: 1.1;
+    color: var(--sd-maroon);
+    font-variant-numeric: lining-nums tabular-nums;
+}
+
+.sd-lab {
+    margin-top: 4px;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: #9c7c85;
+}
+
+/* =================================
+   FIFTH SECTION - WEDDING EVENTS
+================================= */
+
+.fifth-section {
+    height: auto;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding:
+        clamp(38px, 7svh, 72px)
+        clamp(16px, 5vw, 28px);
+
+    background: #ffffff;
+}
+
+/* =================================
+   EVENTS CONTENT WRAPPER
+================================= */
+
+.events-content {
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+/* =================================
+   EVENTS OVERLINE + TITLE (MAROON)
+================================= */
+
+.events-overline {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(10px, 2.8vw, 13px);
+    font-weight: 600;
+
+    letter-spacing: clamp(2px, .8vw, 4px);
+
+    text-transform: uppercase;
+
+    margin-bottom: 8px;
+    
+    /* Changed to Maroon */
+    color: var(--maroon);
+}
+
+.events-title {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(34px, 10vw, 50px);
+    font-weight: 400;
+
+    line-height: 1.15;
+
+    margin: 0;
+    
+    /* Changed to Maroon */
+    color: var(--maroon);
+}
+
+/* =================================
+   EVENTS DIVIDER
+================================= */
+
+.events-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: min(140px, 42%);
+
+    margin:
+        clamp(12px, 2.4svh, 18px)
+        auto;
+
+    gap: 9px;
+}
+
+.events-divider::before,
+.events-divider::after {
+    content: "";
+
+    height: 1px;
+    flex: 1;
+
+    background: rgba(128, 27, 56, .3);
+}
+
+.events-divider span {
+    display: block;
+
+    width: 6px;
+    height: 6px;
+
+    background: #ae8755;
+
+    transform: rotate(45deg);
+}
+
+/* =================================
+   EVENT IMAGE CONTAINER (NO CARD FRAME)
+================================= */
+
+.event-image-container {
+    position: relative;
+    width: min(90%, 380px);
+    margin: clamp(20px, 3.6svh, 32px) auto;
+}
+
+/* NATURAL IMAGE SIZE */
+.event-bg-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+/* OVERLAY CONTENT ON IMAGE */
+.event-overlay-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: clamp(20px, 5vw, 40px) clamp(15px, 4vw, 30px);
+}
+
+/* =================================
+   EVENT BLOCK
+================================= */
+
+.event-block {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+}
+
+.event-name {
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(27px, 7.8vw, 36px);
+    font-weight: 400;
+
+    line-height: 1.2;
+
+    margin: 0 0 8px;
+}
+
+.event-date {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(11px, 3.1vw, 14px);
+    font-weight: 600;
+
+    letter-spacing: clamp(1.5px, .6vw, 3px);
+
+    text-transform: uppercase;
+
+    margin: 0 0 5px;
+}
+
+.event-time {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-style: italic;
+
+    font-size: clamp(13px, 3.6vw, 16px);
+
+    margin: 0 0 6px;
+}
+
+.event-venue {
+    font-family: 'Cormorant Garamond', serif;
+
+    font-size: clamp(13px, 3.7vw, 16px);
+    font-weight: 500;
+
+    line-height: 1.45;
+
+    margin: 0 0 14px;
+}
+
+/* =================================
+   VENUE BUTTON
+================================= */
+
+.venue-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 9px 18px 10px;
+
+    border: 1px solid rgba(128, 27, 56, 0.5);
+    border-radius: 999px;
+
+    background: transparent;
+
+    color: #801b38;
+
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1.6px;
+    line-height: 1;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+
+    transition:
+        background .3s ease,
+        border-color .3s ease,
+        color .3s ease,
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.venue-button::after {
+    content: "›";
+
+    display: inline-block;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-weight: 400;
+    line-height: .7;
+
+    margin-top: -2px;
+
+    color: #801b38;
+
+    transition:
+        transform .3s ease,
+        color .3s ease;
+}
+
+.venue-button:hover {
+    background: #801b38;
+    border-color: #801b38;
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 18px rgba(128, 27, 56, .2);
+}
+
+.venue-button:hover::after {
+    color: #ffffff;
+    transform: translateX(3px);
+}
+
+.venue-button:active {
+    transform: translateY(0) scale(.97);
+}
+
+.venue-button:focus-visible {
+    outline: 2px solid #801b38;
+    outline-offset: 4px;
+}
+
+/* OVERRIDE BUTTON FOR OVERLAY (LIGHT TEXT ON IMAGE) */
+.event-overlay-content .venue-button {
+    border-color: rgba(255, 255, 255, 0.7);
+    color: #ffffff;
+}
+
+.event-overlay-content .venue-button::after {
+    color: #ffffff;
+}
+
+.event-overlay-content .venue-button:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #801b38;
+}
+
+.event-overlay-content .venue-button:hover::after {
+    color: #801b38;
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+.start-button:focus-visible {
+    outline: 3px solid #bd8c36;
+    outline-offset: 5px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+}
+
+/* =================================
+   SMALL MOBILE DEVICES
+================================= */
+
+@media (max-width: 350px) {
+
+    .invitation-content {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .invitation-heading {
+        font-size: 40px;
+    }
+
+    .couple-monogram {
+        width: min(60vw, 210px, calc(100% - 36px));
+    }
+
+    .invitation-subtitle {
+        letter-spacing: 2px;
+    }
+
+    .couple-section-names {
+        font-size: clamp(36px, 11vw, 44px);
+    }
+
+    .start-button {
+        min-height: 37px;
+        padding: 9px 16px;
+        font-size: 11px;
+        letter-spacing: 1.4px;
+        gap: 6px;
+    }
+
+    .scroll-down-indicator {
+        font-size: 11px;
+        letter-spacing: 2px;
+    }
+
+    .parents-section-content {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .parents-couple-name {
+        font-size: clamp(39px, 12vw, 46px);
+    }
+
+    .parents-details {
+        font-size: 13px;
+    }
+
+    .parents-intro {
+        font-size: 15px;
+    }
+
+    .event-image-container {
+        width: min(95%, 300px);
+    }
+    
+    .event-overlay-content {
+        padding: 15px 10px;
+    }
+}
+
+/* =================================
+   SHORT MOBILE SCREENS
+================================= */
+
+@media (max-height: 580px) and (max-width: 900px) {
+
+    .invitation-content {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .invitation-heading {
+        font-size: clamp(34px, 8vw, 44px);
+        margin-bottom: 8px;
+    }
+
+    .invitation-subtitle {
+        font-size: 10px;
+        margin-bottom: 10px;
+    }
+
+    .couple-monogram {
+        width: min(56vw, 210px, calc(100% - 36px));
+    }
+
+    .invitation-footer {
+        font-size: 10px;
+        margin-top: 12px;
+    }
+
+    .couple-section-content {
+        top: 22px;
+    }
+
+    .couple-section-names {
+        font-size: clamp(34px, 8vw, 42px);
+    }
+
+    .couple-tagline {
+        margin-top: 5px;
+        font-size: 10px;
+    }
+
+    .scroll-down-indicator {
+        bottom: 10px;
+    }
+
+    .parents-section-content {
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .parents-overline {
+        margin-bottom: 9px;
+        font-size: 10px;
+    }
+
+    .parents-intro {
+        font-size: 14px;
+        margin-bottom: 7px;
+    }
+
+    .parents-couple-name {
+        font-size: clamp(35px, 9vw, 45px);
+    }
+
+    .parents-details {
+        font-size: 12px;
+        margin-top: 3px;
+    }
+
+    .parents-with {
+        font-size: 22px;
+        margin: 7px 0;
+    }
+
+    .sd-title {
+        font-size: clamp(32px, 11cqw, 46px);
+    }
+}
+
+/* =================================
+   REDUCED MOTION
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .start-button,
+    .scroll-down-indicator {
+        transition-duration: .15s;
+    }
+
+    .scroll-down-arrow {
+        animation: none;
+    }
+
+    .shine-text {
+        animation: none;
+        background-position: center;
+    }
+
+    .sd-tailL,
+    .sd-tailR,
+    .sd-hl,
+    .sd-hint,
+    .sd-band::after {
+        animation: none;
+    }
+}
+
+/* =================================
+   DESKTOP BACKGROUND
+================================= */
+
+@media (min-width: 700px) {
+
+    body {
+        background: #eae3d9;
+    }
+}
+
+/* =================================
+   REMOVE BLUE HIGHLIGHT THROUGHOUT WEBSITE
+================================= */
+
+*,
+*::before,
+*::after {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+*:focus:not(:focus-visible) {
+    outline: none !important;
+}
+
+button,
+a,
+input,
+textarea,
+select,
+[role="button"],
+[tabindex] {
+    -webkit-tap-highlight-color: transparent !important;
+}
+
+*:focus-visible {
+    outline-color: #ae8755;
+}
+
+/* =================================
+   WEDDING EVENT CARD - PREMIUM TEXT
+================================= */
+
+.event-overlay-content {
+    padding: clamp(16px, 4.2vw, 28px)
+               clamp(12px, 3.5vw, 22px);
+}
+
+/* Solid ivory text with glow */
+.event-overlay-content .shine-text {
+    color: #fffaf3 !important;
+    background: none !important;
+    background-image: none !important;
+    -webkit-background-clip: initial !important;
+    background-clip: initial !important;
+    -webkit-text-fill-color: #fffaf3 !important;
+    filter: none !important;
+    animation: none !important;
+
+    text-shadow:
+        0 1px 2px rgba(45, 0, 12, .95),
+        0 2px 5px rgba(45, 0, 12, .82),
+        0 0 7px rgba(255, 245, 225, .78),
+        0 0 14px rgba(255, 230, 205, .48);
+}
+
+/* Event heading */
+.event-overlay-content .event-name {
+    font-family: 'Pinyon Script', 'Great Vibes', cursive;
+    font-size: clamp(30px, 8.4vw, 40px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: .2px;
+    margin: 0 0 7px;
+
+    text-shadow:
+        0 1px 2px rgba(42, 0, 10, .95),
+        0 2px 5px rgba(42, 0, 10, .82),
+        0 0 8px rgba(255, 248, 235, .95),
+        0 0 17px rgba(255, 225, 205, .65);
+}
+
+/* Event date */
+.event-overlay-content .event-date {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(11px, 3.15vw, 14px);
+    font-weight: 700;
+    letter-spacing: clamp(1.2px, .48vw, 2.2px);
+    line-height: 1.3;
+    margin: 0 0 4px;
+}
+
+/* Event time */
+.event-overlay-content .event-time {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(13px, 3.7vw, 16px);
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 5px;
+}
+
+/* Venue details */
+.event-overlay-content .event-venue {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(13px, 3.75vw, 16px);
+    font-weight: 700;
+    line-height: 1.35;
+    margin: 0 0 10px;
+}
+
+/* Premium venue button */
+.event-overlay-content .venue-button {
+    padding: 8px 17px 9px;
+    border: 1px solid rgba(255, 250, 240, .95);
+    background: rgba(83, 5, 24, .42);
+    color: #fffaf3;
+
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    text-shadow: 0 1px 3px rgba(35, 0, 8, .9);
+
+    box-shadow:
+        0 2px 8px rgba(35, 0, 8, .28),
+        0 0 9px rgba(255, 245, 225, .32),
+        inset 0 1px 0 rgba(255, 255, 255, .2);
+}
+
+.event-overlay-content .venue-button::after {
+    color: #fffaf3;
+    text-shadow: 0 0 6px rgba(255, 245, 225, .75);
+}
+
+.event-overlay-content .venue-button:hover {
+    background: rgba(255, 250, 240, .96);
+    border-color: #fffaf3;
+    color: #801b38;
+    text-shadow: none;
+}
+
+.event-overlay-content .venue-button:hover::after {
+    color: #801b38;
+}
+
+/* Small mobile screens */
+@media (max-width: 350px) {
+
+    .event-overlay-content {
+        padding: 12px 9px;
+    }
+
+    .event-overlay-content .event-name {
+        font-size: clamp(27px, 8vw, 32px);
+        margin-bottom: 5px;
+    }
+
+    .event-overlay-content .event-date {
+        font-size: 10px;
+        letter-spacing: 1px;
+    }
+
+    .event-overlay-content .event-time,
+    .event-overlay-content .event-venue {
+        font-size: 12px;
+    }
+
+    .event-overlay-content .event-venue {
+        margin-bottom: 7px;
+    }
+
+    .event-overlay-content .venue-button {
+        padding: 7px 14px 8px;
+        font-size: 10px;
+    }
+}
+
+/* =================================
+   RSVP SECTION (embedded after fifth)
+================================= */
+.rsvp {
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 56px 20px 72px;
+    text-align: center;
+    background: #ffffff;
+    font-family: 'Cormorant Garamond', 'Palatino Linotype', Georgia, serif;
+    color: var(--maroon);
+    box-sizing: border-box;
+}
+
+.rsvp .kicker {
+    font-size: .8rem;
+    letter-spacing: .35em;
+    text-transform: uppercase;
+    color: var(--maroon);
+    margin: 0 0 6px;
+}
+
+.rsvp .title {
+    font-family: 'Great Vibes', 'Snell Roundhand', cursive;
+    font-weight: 400;
+    font-size: clamp(2.6rem, 11vw, 3.6rem);
+    color: var(--maroon);
+    margin: 0;
+    line-height: 1.1;
+}
+
+.rsvp .divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 22px 0 34px;
+}
+
+.rsvp .divider::before,
+.rsvp .divider::after {
+    content: "";
+    width: 56px;
+    height: 1px;
+    background: #e3c9cf;
+}
+
+.rsvp .divider i {
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    transform: rotate(45deg);
+}
+
+/* Velvet card */
+.rsvp .velvet {
+    position: relative;
+    border-radius: 22px;
+    padding: 34px 26px 30px;
+    color: #fff6f0;
+    text-align: left;
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        radial-gradient(120% 90% at 18% 0%, rgba(255,120,140,.30), transparent 55%),
+        radial-gradient(90% 70% at 100% 100%, rgba(0,0,0,.45), transparent 60%),
+        linear-gradient(135deg, #8d1229 0%, #5a0a1a 48%, #3b0610 100%);
+    box-shadow:
+        inset 0 0 0 1px rgba(255,170,185,.25),
+        inset 0 2px 14px rgba(255,150,170,.28),
+        inset 0 -16px 36px rgba(0,0,0,.45),
+        0 18px 38px -14px rgba(90,10,26,.55);
+}
+
+.rsvp .velvet::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: .55;
+    mix-blend-mode: overlay;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .55 0 0 0 0 .6 0 0 0 1.4 -.2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.rsvp .velvet::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background:
+        repeating-linear-gradient(115deg, rgba(255,255,255,.035) 0 2px, rgba(0,0,0,.05) 2px 5px),
+        linear-gradient(115deg, transparent 30%, rgba(255,170,185,.16) 46%, transparent 62%);
+}
+
+.rsvp .velvet h2 {
+    font-family: 'Great Vibes', cursive;
+    font-weight: 400;
+    font-size: 2.4rem;
+    margin: 0 0 4px;
+    text-align: center;
+    text-shadow: 0 2px 6px rgba(0,0,0,.45);
+}
+
+.rsvp .velvet .sub {
+    margin: 0 0 26px;
+    text-align: center;
+    font-size: 1rem;
+    font-style: italic;
+    color: #f3d6d3;
+}
+
+.rsvp .field {
+    margin: 0 0 20px;
+    border: 0;
+    padding: 0;
+    min-width: 0;
+}
+
+.rsvp .field > label,
+.rsvp .field > legend {
+    display: block;
+    padding: 0;
+    font-weight: 700;
+    font-size: .82rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #f6dcd7;
+    margin-bottom: 8px;
+}
+
+.rsvp .opt {
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: .04em;
+    text-transform: none;
+    opacity: .8;
+}
+
+.rsvp input[type=text],
+.rsvp input[type=email],
+.rsvp select,
+.rsvp textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 1.15rem;
+    color: #fff6f0;
+    background: rgba(40,0,10,.38);
+    border: 1px solid rgba(255,190,200,.32);
+    border-radius: 10px;
+    padding: 11px 14px;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,.35);
+    transition: border-color .2s, background .2s;
+    box-sizing: border-box;
+}
+
+.rsvp textarea {
+    resize: vertical;
+    min-height: 96px;
+}
+
+.rsvp select {
+    appearance: none;
+    -webkit-appearance: none;
+    cursor: pointer;
+    padding-right: 40px;
+    background-image: linear-gradient(45deg, transparent 50%, #fff6f0 50%), linear-gradient(135deg, #fff6f0 50%, transparent 50%);
+    background-position: calc(100% - 20px) 55%, calc(100% - 14px) 55%;
+    background-size: 6px 6px;
+    background-repeat: no-repeat;
+}
+
+.rsvp select option {
+    color: #3b0610;
+    background: #fff;
+}
+
+.rsvp ::placeholder {
+    color: rgba(255,230,225,.5);
+    font-style: italic;
+}
+
+.rsvp input:focus-visible,
+.rsvp select:focus-visible,
+.rsvp textarea:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+    border-color: var(--gold);
+}
+
+/* choice pills */
+.rsvp .choices {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.rsvp .choice {
+    position: relative;
+    flex: 1 1 150px;
+}
+
+.rsvp .choice input {
+    position: absolute;
+    opacity: 0;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    cursor: pointer;
+}
+
+.rsvp .choice span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 10px 14px;
+    text-align: center;
+    border: 1px solid rgba(255,190,200,.4);
+    border-radius: 12px;
+    font-size: 1.05rem;
+    background: rgba(40,0,10,.28);
+    transition: background .2s, border-color .2s, color .2s;
+}
+
+.rsvp .choice span::before {
+    content: "";
+    flex: none;
+    width: 16px;
+    height: 16px;
+    border: 1.5px solid rgba(255,225,220,.8);
+    border-radius: 50%;
+}
+
+.rsvp .choices.boxes .choice span::before {
+    border-radius: 4px;
+}
+
+.rsvp .choice input:checked + span {
+    background: #fff6f0;
+    color: #5a0a1a;
+    border-color: #fff6f0;
+    font-weight: 700;
+}
+
+.rsvp .choice input:checked + span::before {
+    background: var(--wine) center/10px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1.5 5.2l2.4 2.4 4.6-5' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E");
+    border-color: var(--wine);
+}
+
+.rsvp .choice input:focus-visible + span {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+}
+
+.rsvp .err {
+    display: none;
+    margin: 8px 0 0;
+    font-size: .95rem;
+    color: #ffd3a8;
+}
+
+.rsvp .field.invalid .err {
+    display: block;
+}
+
+.rsvp .field.invalid input[type=text],
+.rsvp .field.invalid input[type=email] {
+    border-color: #ffb98a;
+}
+
+.rsvp .details[hidden] {
+    display: none;
+}
+
+.rsvp button[type=submit] {
+    display: block;
+    width: 100%;
+    margin-top: 26px;
+    padding: 14px 20px;
+    font: inherit;
+    font-weight: 700;
+    font-size: .95rem;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #fff6f0;
+    background: rgba(255,255,255,.06);
+    border: 1.5px solid rgba(255,246,240,.85);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background .2s, color .2s;
+    box-sizing: border-box;
+}
+
+.rsvp button[type=submit]:hover {
+    background: #fff6f0;
+    color: #5a0a1a;
+}
+
+.rsvp button[type=submit]:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+}
+
+.rsvp .thanks {
+    text-align: center;
+    padding: 26px 0 10px;
+}
+
+.rsvp .thanks[hidden] {
+    display: none;
+}
+
+.rsvp .thanks h2 {
+    font-size: 2.8rem;
+}
+
+.rsvp .thanks p {
+    font-size: 1.2rem;
+    margin: 10px 0 0;
+    color: #f3d6d3;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .rsvp * {
+        transition: none !important;
+    }
+}
+
+@media (max-width: 380px) {
+    .rsvp .velvet {
+        padding: 28px 18px 26px;
+    }
+}
+
+/* =================================
+   FOOTER SECTION (OPTIMIZED)
+================================= */
+.footer-section {
+    position: relative;
+    width: 100%;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #2a0a12;
+}
+
+.footer-section .footer-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.footer-section .footer-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 0, 6, 0.55);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.footer-section .footer-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: clamp(40px, 8svh, 80px) clamp(20px, 5vw, 40px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    max-width: 700px;
+}
+
+.footer-section .footer-couple-name {
+    font-family: 'Great Vibes', cursive;
+    font-size: clamp(38px, 11vw, 58px);
+    font-weight: 400;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.2;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.95),
+        0 0 20px rgba(255, 240, 220, 0.9),
+        0 0 40px rgba(255, 220, 200, 0.8),
+        0 0 80px rgba(255, 200, 180, 0.6),
+        0 2px 4px rgba(0,0,0,0.5);
+    /* Optimized: use opacity animation instead of text-shadow animation */
+    animation: footerGlowOpacity 3s ease-in-out infinite alternate;
+    will-change: opacity;
+}
+
+.footer-section .footer-message {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(18px, 4.5vw, 24px);
+    font-weight: 500;
+    color: #ffffff;
+    margin: 0;
+    line-height: 1.4;
+    text-shadow:
+        0 0 10px rgba(255, 255, 255, 0.95),
+        0 0 20px rgba(255, 240, 220, 0.9),
+        0 0 40px rgba(255, 220, 200, 0.8),
+        0 0 70px rgba(255, 200, 180, 0.6),
+        0 2px 4px rgba(0,0,0,0.5);
+    /* Optimized: use opacity animation instead of text-shadow animation */
+    animation: footerGlowOpacity 3s ease-in-out infinite alternate;
+    will-change: opacity;
+}
+
+@keyframes footerGlowOpacity {
+    0% {
+        opacity: 0.85;
+        text-shadow:
+            0 0 10px rgba(255, 255, 255, 0.7),
+            0 0 20px rgba(255, 240, 220, 0.6),
+            0 0 40px rgba(255, 220, 200, 0.4),
+            0 0 70px rgba(255, 200, 180, 0.2),
+            0 2px 4px rgba(0,0,0,0.5);
+    }
+    100% {
+        opacity: 1;
+        text-shadow:
+            0 0 14px rgba(255, 255, 255, 1),
+            0 0 28px rgba(255, 240, 220, 1),
+            0 0 55px rgba(255, 220, 200, 0.9),
+            0 0 90px rgba(255, 200, 180, 0.7),
+            0 2px 4px rgba(0,0,0,0.5);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .footer-section .footer-couple-name,
+    .footer-section .footer-message {
+        animation: none;
+    }
+}
+
+/* =================================
+   MUSIC TOGGLE BUTTON (FLOATING)
+================================= */
+.music-toggle {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    z-index: 9999;
+
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(174, 135, 85, 0.75);
+
+    background: linear-gradient(135deg, #941d3b 0%, #79142f 52%, #641026 100%);
+    color: #fffaf0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+
+    box-shadow:
+        0 4px 16px rgba(69, 12, 29, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.22);
+
+    transition: transform .3s ease, box-shadow .3s ease, opacity .5s ease;
+
+    -webkit-tap-highlight-color: transparent;
+}
+
+.music-toggle:hover {
+    transform: scale(1.08);
+    box-shadow: 0 7px 22px rgba(69, 12, 29, 0.45);
+}
+
+.music-toggle:focus-visible {
+    outline: 3px solid #ae8755;
+    outline-offset: 3px;
+}
+
+.music-toggle svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+    pointer-events: none;
+}
+
+/* Hide when intro is locked (before start) */
+html.intro-locked .music-toggle {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.8);
+}
+
+/* Show after start */
+html:not(.intro-locked) .music-toggle {
+    opacity: 1;
+    pointer-events: auto;
+    transform: scale(1);
+}
+
+/* Muted state */
+.music-toggle.is-muted {
+    background: linear-gradient(135deg, #b0a090 0%, #8a7a6a 52%, #6a5a4a 100%);
+    border-color: rgba(200, 190, 170, 0.6);
+    color: #f0ebe5;
+}
+
+.music-toggle.is-muted:hover {
+    box-shadow: 0 7px 22px rgba(100, 80, 60, 0.35);
+}
+
+@media (max-width: 480px) {
+    .music-toggle {
+        width: 46px;
+        height: 46px;
+        bottom: 18px;
+        right: 18px;
+    }
+    .music-toggle svg {
+        width: 20px;
+        height: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- =================================
+     BACKGROUND MUSIC
+================================= -->
+<audio id="bgMusic" loop preload="none" src="audio/music1.mpeg"></audio>
+
+<!-- =================================
+     MUSIC TOGGLE BUTTON
+================================= -->
+<button class="music-toggle" id="musicToggle" type="button" aria-label="Toggle music" aria-pressed="false">
+    <svg id="musicIconOn" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/>
+    </svg>
+    <svg id="musicIconOff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+        <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" opacity="0.35"/>
+        <line x1="3" y1="3" x2="21" y2="21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+</button>
+
+<!-- =================================
+     SECTION 1 - WEDDING INVITATION
+================================= -->
+
+<section class="hero" id="hero">
+
+    <div class="invitation" id="invitation">
+
+        <div class="invitation-content">
+
+            <h1 class="invitation-heading">
+                <span>You are</span>
+                <span>invited</span>
+            </h1>
+
+            <p class="invitation-subtitle">
+                TO THE WEDDING OF
+            </p>
+
+            <!-- COUPLE INITIALS -->
+
+            <div class="couple-monogram">
+
+                <img
+                    class="monogram-frame"
+                    src="Assets/circleshape.png"
+                    alt=""
+                    aria-hidden="true"
+                    draggable="false"
+                >
+
+                <div
+                    class="monogram-initials"
+                    aria-label="Olivia and Ethan"
+                >
+
+                    <span class="monogram-letter">O</span>
+
+                    <span class="monogram-symbol">&</span>
+
+                    <span class="monogram-letter">E</span>
+
+                </div>
+
+            </div>
+
+            <p class="invitation-footer">
+                WITH THEIR FAMILIES
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- WEDDING CAR -->
+
+    <div class="car-container" id="carContainer">
+
+        <img
+            id="carImage"
+            src="Assets/carimg.png"
+            alt="Wedding couple in a vintage car"
+            draggable="false"
+            fetchpriority="high"
+        >
+
+    </div>
+
+    <!-- PREMIUM START BUTTON -->
+
+    <button
+        class="start-button"
+        id="startButton"
+        type="button"
+        aria-pressed="false"
+    >
+        TAP TO START THE CAR
+    </button>
+
+    <!-- SCROLL DOWN INDICATOR -->
+
+    <button
+        class="scroll-down-indicator"
+        id="scrollDownButton"
+        type="button"
+        aria-label="Scroll down to see the couple section"
+        aria-hidden="true"
+        tabindex="-1"
+    >
+
+        <span>SCROLL DOWN</span>
+
+        <span class="scroll-down-arrow" aria-hidden="true">
+            ↓
+        </span>
+
+    </button>
+
+    <span
+        id="animationStatus"
+        class="sr-only"
+        aria-live="polite">
+    </span>
+
+</section>
+
+<!-- =================================
+     SECTION 2 - COUPLE INTRODUCTION
+================================= -->
+
+<section class="couple-section" id="couple">
+
+    <div class="couple-section-content">
+
+        <p class="couple-overline shine-text">
+            A CELEBRATION OF LOVE
+        </p>
+
+        <h2 class="couple-section-names shine-text">
+            Olivia &amp; Ethan
+        </h2>
+
+        <p class="couple-tagline shine-text">
+            Two Hearts, One Beautiful Journey
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SECTION 3 - PARENTS & FAMILY
+================================= -->
+
+<section class="parents-section" id="parents">
+
+    <div class="parents-section-content">
+
+        <!-- TOP HEADING -->
+
+        <p class="parents-overline">
+            TOGETHER WITH THEIR FAMILIES
+        </p>
+
+        <!-- INVITATION MESSAGE -->
+
+        <p class="parents-intro">
+            request the honour of your presence
+            <br>
+            at the marriage of
+        </p>
+
+        <!-- GROOM NAME -->
+
+        <h2 class="parents-couple-name">
+            Ethan
+        </h2>
+
+        <!-- GROOM PARENTS -->
+
+        <p class="parents-details">
+            son of Mr. [Groom's Father's Name] &
+            <span>Mrs. [Groom's Mother's Name]</span>
+        </p>
+
+        <!-- WITH -->
+
+        <p class="parents-with">
+            with
+        </p>
+
+        <!-- BRIDE NAME -->
+
+        <h2 class="parents-couple-name">
+            Olivia
+        </h2>
+
+        <!-- BRIDE PARENTS -->
+
+        <p class="parents-details">
+            daughter of Mr. [Bride's Father's Name] &
+            <span>Mrs. [Bride's Mother's Name]</span>
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SECTION 4 - SAVE THE DATE
+================================= -->
+
+<section class="fourth-section" id="fourth">
+
+    <div class="save-date">
+
+        <h2 class="sd-title">Save the date</h2>
+
+        <div class="sd-panel" id="sdPanel">
+
+            <div
+                class="sd-stage"
+                id="sdStage"
+                role="button"
+                tabindex="0"
+                aria-label="Tap to untie the bow"
+            >
+
+                <div class="sd-band l"></div>
+                <div class="sd-band r"></div>
+
+                <svg
+                    class="sd-bow"
+                    viewBox="0 0 400 300"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                >
+
+                    <defs>
+
+                        <linearGradient id="sdGLoop" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#4a0d1e"/>
+                            <stop offset=".3" stop-color="#7a1d3a"/>
+                            <stop offset=".52" stop-color="#a34b61"/>
+                            <stop offset=".75" stop-color="#6b1230"/>
+                            <stop offset="1" stop-color="#3a0917"/>
+                        </linearGradient>
+
+                        <linearGradient id="sdGInner" x1="0" y1="0" x2="1" y2="0">
+                            <stop offset="0" stop-color="#4a0d1e"/>
+                            <stop offset=".55" stop-color="#7a1d3a"/>
+                            <stop offset="1" stop-color="#5c1129"/>
+                        </linearGradient>
+
+                        <linearGradient id="sdGTail" x1="0" y1="0" x2="1" y2=".3">
+                            <stop offset="0" stop-color="#3d0a1a"/>
+                            <stop offset=".35" stop-color="#741834"/>
+                            <stop offset=".5" stop-color="#a34b61"/>
+                            <stop offset=".75" stop-color="#6b1230"/>
+                            <stop offset="1" stop-color="#3a0917"/>
+                        </linearGradient>
+
+                        <linearGradient id="sdGKnot" x1=".2" y1="0" x2=".8" y2="1">
+                            <stop offset="0" stop-color="#c97a8e"/>
+                            <stop offset=".4" stop-color="#8e2445"/>
+                            <stop offset="1" stop-color="#5a1028"/>
+                        </linearGradient>
+
+                        <filter id="sdBlur" x="-20%" y="-20%" width="140%" height="140%">
+                            <feGaussianBlur stdDeviation="1.3"/>
+                        </filter>
+
+                        <filter id="sdDS" x="-30%" y="-30%" width="160%" height="170%">
+                            <feDropShadow dx="0" dy="7" stdDeviation="5" flood-color="#4a0d1e" flood-opacity=".4"/>
+                        </filter>
+
+                        <g id="sdLoop">
+
+                            <path d="M192,158 C170,126 126,102 90,116 C62,128 58,162 80,180 C104,200 154,192 192,167 Z" fill="url(#sdGLoop)"/>
+
+                            <path d="M192,161 C168,140 130,126 98,134 C84,150 90,168 110,177 C142,187 174,174 192,165 Z" fill="url(#sdGInner)"/>
+
+                            <path d="M192,160 C160,152 126,152 96,166" stroke="#3d0a1a" stroke-opacity=".4" stroke-width="2" fill="none"/>
+
+                            <path class="sd-hl" d="M186,150 C160,126 124,111 92,122" stroke="#fff" stroke-opacity=".55" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+
+                            <path class="sd-hl" d="M178,170 C150,184 118,187 96,175" stroke="#e8c0cc" stroke-opacity=".45" stroke-width="2.5" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+
+                        </g>
+
+                    </defs>
+
+                    <g filter="url(#sdDS)">
+
+                        <g class="sd-loopL"><use href="#sdLoop"/></g>
+
+                        <g class="sd-loopR"><use href="#sdLoop" transform="translate(400,0) scale(-1,1)"/></g>
+
+                        <g class="sd-tailL">
+                            <path d="M194,172 C178,205 155,238 138,274 L160,262 L174,280 C190,248 204,218 212,182 Z" fill="url(#sdGTail)"/>
+                            <path class="sd-hl" d="M192,178 C178,208 162,238 150,262" stroke="#fff" stroke-opacity=".35" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+                        </g>
+
+                        <g class="sd-tailR">
+                            <path d="M206,172 C222,205 245,238 262,274 L240,262 L226,280 C210,248 196,218 188,182 Z" fill="url(#sdGTail)"/>
+                            <path class="sd-hl" d="M210,180 C224,208 240,236 252,258" stroke="#fff" stroke-opacity=".3" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+                        </g>
+
+                        <g class="sd-knot">
+                            <path d="M183,150 C190,142 210,142 217,150 C222,160 222,170 217,178 C209,185 191,185 183,178 C178,170 178,160 183,150Z" fill="url(#sdGKnot)"/>
+                            <path d="M200,145 L200,183" stroke="#4a0d1e" stroke-opacity=".28" stroke-width="1.5"/>
+                            <path class="sd-hl" d="M186,153 C195,147 205,147 214,153" stroke="#fff" stroke-opacity=".6" stroke-width="2.6" fill="none" stroke-linecap="round" filter="url(#sdBlur)"/>
+                            <path d="M188,177 C196,182 206,182 213,177" stroke="#3a0917" stroke-opacity=".5" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </g>
+
+                    </g>
+
+                </svg>
+
+            </div>
+
+            <p class="sd-hint">Tap to untie the bow</p>
+
+            <div class="sd-details">
+
+                <div class="sd-small sd-dow" style="--i:0">Saturday</div>
+
+                <div class="sd-dateRow" style="--i:1">
+                    <div class="sd-side sd-small">January</div>
+                    <div class="sd-day">16</div>
+                    <div class="sd-side sd-small">2027</div>
+                </div>
+
+                <div class="sd-time" style="--i:2">4:00 PM</div>
+
+                <div class="sd-togo" style="--i:3">Days to go</div>
+
+                <div class="sd-count" style="--i:4">
+                    <div class="sd-unit"><span class="sd-num" id="sdD">0</span><span class="sd-lab">Days</span></div>
+                    <div class="sd-unit"><span class="sd-num" id="sdH">0</span><span class="sd-lab">Hours</span></div>
+                    <div class="sd-unit"><span class="sd-num" id="sdM">0</span><span class="sd-lab">Minutes</span></div>
+                    <div class="sd-unit"><span class="sd-num" id="sdS">0</span><span class="sd-lab">Seconds</span></div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SECTION 5 - WEDDING EVENTS
+================================= -->
+
+<section class="fifth-section" id="fifth">
+
+    <div class="events-content">
+
+        <p class="events-overline">
+            JOIN US FOR
+        </p>
+
+        <h2 class="events-title">
+            Wedding &amp; Reception
+        </h2>
+
+        <div class="events-divider" aria-hidden="true">
+            <span></span>
+        </div>
+
+        <!-- WEDDING EVENT -->
+        <div class="event-image-container">
+            <img class="event-bg-img" src="Assets/cardimg.png" alt="Wedding celebration card" draggable="false">
+            
+            <div class="event-overlay-content">
+                <div class="event-block">
+
+                    <h3 class="event-name shine-text">
+                        The Wedding
+                    </h3>
+
+                    <p class="event-date shine-text">
+                        Saturday, January 16, 2027
+                    </p>
+
+                    <p class="event-time shine-text">
+                        4:00 PM
+                    </p>
+
+                    <p class="event-venue shine-text">
+                        St. Mary's Cathedral
+                        <br>
+                        123 Rosewood Avenue, Springfield
+                    </p>
+
+                    <a
+                        class="venue-button"
+                        href="https://maps.google.com/?q=St+Mary%27s+Cathedral"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Venue
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="events-divider" aria-hidden="true">
+            <span></span>
+        </div>
+
+        <!-- RECEPTION EVENT -->
+        <div class="event-image-container">
+            <img class="event-bg-img" src="Assets/cardimg.png" alt="Reception celebration card" draggable="false">
+            
+            <div class="event-overlay-content">
+                <div class="event-block">
+
+                    <h3 class="event-name shine-text">
+                        The Reception
+                    </h3>
+
+                    <p class="event-date shine-text">
+                        Saturday, January 16, 2027
+                    </p>
+
+                    <p class="event-time shine-text">
+                        6:30 PM
+                    </p>
+
+                    <p class="event-venue shine-text">
+                        The Grand Ballroom
+                        <br>
+                        456 Sunset Boulevard, Springfield
+                    </p>
+
+                    <a
+                        class="venue-button"
+                        href="https://maps.google.com/?q=The+Grand+Ballroom"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        View Venue
+                    </a>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =================================
+     SECTION 6 - RSVP (using provided code)
+================================= -->
+
+<section class="rsvp" id="rsvp" aria-labelledby="rsvp-title">
+  <p class="kicker">Kindly reply by December 16</p>
+  <h1 class="title" id="rsvp-title">RSVP</h1>
+  <div class="divider" aria-hidden="true"><i></i></div>
+
+  <div class="velvet">
+    <form id="rsvp-form" novalidate>
+      <h2>Will you join us?</h2>
+      <p class="sub">Saturday, January 16, 2027</p>
+
+      <div class="field" id="f-name">
+        <label for="name">Full name</label>
+        <input type="text" id="name" name="name" autocomplete="name" placeholder="Your name" required>
+        <p class="err">Enter your name.</p>
+      </div>
+
+      <div class="field" id="f-email">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" placeholder="you@example.com" required>
+        <p class="err">Enter a valid email address.</p>
+      </div>
+
+      <fieldset class="field">
+        <legend>Will you attend?</legend>
+        <div class="choices">
+          <label class="choice"><input type="radio" name="attend" value="yes" checked><span>Joyfully accept</span></label>
+          <label class="choice"><input type="radio" name="attend" value="no"><span>Regretfully decline</span></label>
+        </div>
+      </fieldset>
+
+      <div class="details" id="details">
+        <div class="field">
+          <label for="guests">Number of guests attending</label>
+          <select id="guests" name="guests">
+            <option value="1">1 guest (just me)</option>
+            <option value="2">2 guests</option>
+            <option value="3">3 guests</option>
+            <option value="4">4 guests</option>
+            <option value="5">5 guests</option>
+            <option value="6">6 guests</option>
+          </select>
+        </div>
+
+        <fieldset class="field" id="f-events">
+          <legend>Which events will you attend?</legend>
+          <div class="choices boxes">
+            <label class="choice"><input type="checkbox" name="events" value="wedding" checked><span>The Wedding · 4:00 PM</span></label>
+            <label class="choice"><input type="checkbox" name="events" value="reception" checked><span>The Reception · 6:30 PM</span></label>
+          </div>
+          <p class="err">Choose at least one event.</p>
+        </fieldset>
+      </div>
+
+      <div class="field">
+        <label for="message">Message <span class="opt">(optional)</span></label>
+        <textarea id="message" name="message" placeholder="Share a note with the couple, or any dietary needs"></textarea>
+      </div>
+
+      <button type="submit">Send RSVP</button>
+    </form>
+
+    <div class="thanks" id="thanks" hidden role="status" aria-live="polite">
+      <h2>Thank you</h2>
+      <p id="thanks-msg"></p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================
+     SECTION 8 - FOOTER
+================================= -->
+
+<footer class="footer-section" id="footer">
+    <img class="footer-bg" src="Assets/footernameimg.png" alt="" aria-hidden="true" draggable="false" loading="lazy">
+    <div class="footer-overlay" aria-hidden="true"></div>
+    <div class="footer-content">
+        <h2 class="footer-couple-name">Olivia &amp; Ethan</h2>
+        <p class="footer-message">We can’t wait to celebrate with you</p>
+    </div>
+</footer>
+
+<!-- =================================
+     JAVASCRIPT (original + rsvp + music)
+================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    /* =================================
+       ELEMENTS
+    ================================= */
+
+    const root = document.documentElement;
+
+    const hero = document.getElementById("hero");
+
+    const car = document.getElementById("carContainer");
+
+    const carImage = document.getElementById("carImage");
+
+    const button = document.getElementById("startButton");
+
+    const scrollButton = document.getElementById("scrollDownButton");
+
+    const coupleSection = document.getElementById("couple");
+
+    const status = document.getElementById("animationStatus");
+
+    const bgMusic = document.getElementById("bgMusic");
+
+    const musicToggle = document.getElementById("musicToggle");
+
+    const musicIconOn = document.getElementById("musicIconOn");
+
+    const musicIconOff = document.getElementById("musicIconOff");
+
+
+    /* =================================
+       STATE
+    ================================= */
+
+    let animationStarted = false;
+
+    let scrollUnlocked = false;
+
+    let animationFinished = false;
+
+    let musicStarted = false;
+
+    let musicMuted = false;
+
+
+    /* =================================
+       ANIMATION SETTINGS
+    ================================= */
+
+    const DURATION = 8500;
+
+    const REVEAL_OFFSET = 12;
+
+    const REVEAL_SOFTNESS = 85;
+
+    const CAR_FADE_DURATION = 550;
+
+    const EXIT_BUFFER = 40;
+
+
+    /* =================================
+       UNLOCK SCROLL
+    ================================= */
+
+    function unlockPageScroll() {
+
+        if (scrollUnlocked) {
+            return;
+        }
+
+        scrollUnlocked = true;
+
+        // Remove initial scroll lock.
+
+        root.classList.remove("intro-locked");
+
+        // Restore document scrolling.
+
+        root.style.height = "auto";
+
+        root.style.overflowX = "hidden";
+
+        root.style.overflowY = "auto";
+
+        document.body.style.height = "auto";
+
+        // Keep page at hero section.
+
+        window.scrollTo(0, 0);
+
+        // Show scroll indicator.
+
+        hero.classList.add("is-scroll-unlocked");
+
+        scrollButton.setAttribute("aria-hidden", "false");
+
+        scrollButton.removeAttribute("tabindex");
+
+        status.textContent =
+            "Invitation revealed. You can now scroll down to meet Olivia and Ethan.";
+
+    }
+
+
+    /* =================================
+       SMOOTH EASING
+    ================================= */
+
+    function smoothEase(progress) {
+
+        return 0.5 - Math.cos(progress * Math.PI) / 2;
+
+    }
+
+
+    /* =================================
+       FINISH CAR ANIMATION
+    ================================= */
+
+    function finishCarAnimation() {
+
+        if (animationFinished) {
+            return;
+        }
+
+        animationFinished = true;
+
+        const heroHeight = hero.clientHeight;
+
+        // Ensure complete invitation reveal.
+
+        hero.style.setProperty(
+            "--reveal-y",
+            (heroHeight + REVEAL_SOFTNESS + 20) + "px"
+        );
+
+        // Car has cleared the hero.
+
+        car.classList.add("is-exited");
+
+        // Remove car and unlock scrolling.
+
+        setTimeout(function () {
+
+            car.style.display = "none";
+
+            unlockPageScroll();
+
+        }, CAR_FADE_DURATION + 80);
+
+    }
+
+
+    /* =================================
+       CAR ANIMATION
+    ================================= */
+
+    function startCarAnimation() {
+
+        const heroHeight = hero.clientHeight;
+
+        const heroRect = hero.getBoundingClientRect();
+
+        const carRect = car.getBoundingClientRect();
+
+        // Actual starting position relative to hero.
+
+        const initialTop = carRect.top - heroRect.top;
+
+        // Move just beyond the hero boundary.
+
+        const targetTop =
+            heroHeight + REVEAL_SOFTNESS + EXIT_BUFFER;
+
+        const travelDistance = targetTop - initialTop;
+
+        const startTime = performance.now();
+
+
+        /* =================================
+           ANIMATION FRAME
+        ================================= */
+
+        function animateCar(currentTime) {
+
+            if (animationFinished) {
+                return;
+            }
+
+            const elapsed = currentTime - startTime;
+
+            const progress = Math.min(
+                elapsed / DURATION,
+                1
+            );
+
+            const easedProgress = smoothEase(progress);
+
+            const currentMove = travelDistance * easedProgress;
+
+            const currentCarTop = initialTop + currentMove;
+
+
+            /* MOVE CAR */
+
+            car.style.transform = `
+                translate3d(
+                    -50%,
+                    ${currentMove}px,
+                    0
+                )
+            `;
+
+
+            /* REVEAL INVITATION FOLLOWING CAR */
+
+            const revealPosition = Math.max(
+                0,
+                Math.min(
+                    heroHeight + REVEAL_SOFTNESS + 20,
+                    currentCarTop + REVEAL_OFFSET
+                )
+            );
+
+            hero.style.setProperty(
+                "--reveal-y",
+                revealPosition + "px"
+            );
+
+
+            /* CONTINUE ANIMATION */
+
+            if (progress < 1) {
+
+                requestAnimationFrame(animateCar);
+
+            }
+
+            else {
+
+                car.style.transform = `
+                    translate3d(
+                        -50%,
+                        ${travelDistance}px,
+                        0
+                    )
+                `;
+
+                finishCarAnimation();
+
+            }
+
+        }
+
+        requestAnimationFrame(animateCar);
+
+    }
+
+
+    /* =================================
+       MUSIC CONTROL
+    ================================= */
+
+    function startMusic() {
+        if (musicStarted || !bgMusic) return;
+        musicStarted = true;
+        bgMusic.volume = 0.35;
+        bgMusic.play().catch(function () {
+            // Autoplay blocked – wait for user interaction (we already have a click)
+            console.warn("Music autoplay was blocked.");
+        });
+    }
+
+    function toggleMusic() {
+        if (!bgMusic) return;
+
+        if (musicMuted || bgMusic.paused) {
+            // Turn ON
+            bgMusic.play().catch(function(){});
+            musicMuted = false;
+            musicToggle.classList.remove("is-muted");
+            musicToggle.setAttribute("aria-pressed", "true");
+            musicToggle.setAttribute("aria-label", "Mute music");
+            musicIconOn.style.display = "";
+            musicIconOff.style.display = "none";
+        } else {
+            // Turn OFF
+            bgMusic.pause();
+            musicMuted = true;
+            musicToggle.classList.add("is-muted");
+            musicToggle.setAttribute("aria-pressed", "false");
+            musicToggle.setAttribute("aria-label", "Play music");
+            musicIconOn.style.display = "none";
+            musicIconOff.style.display = "";
+        }
+    }
+
+    if (musicToggle) {
+        musicToggle.addEventListener("click", toggleMusic);
+    }
+
+
+    /* =================================
+       START BUTTON CLICK
+    ================================= */
+
+    button.addEventListener("click", async function () {
+
+        if (animationStarted) {
+            return;
+        }
+
+        animationStarted = true;
+
+        button.disabled = true;
+
+        button.setAttribute("aria-pressed", "true");
+
+        status.textContent = "Wedding invitation opening.";
+
+        // Start music on first interaction
+        startMusic();
+
+        // Wait until car image is ready.
+
+        if (carImage.decode) {
+
+            try {
+
+                await carImage.decode();
+
+            }
+
+            catch (error) {
+
+                console.warn(
+                    "Car image decoding failed:",
+                    error
+                );
+
+            }
+
+        }
+
+        // Start invitation reveal.
+
+        hero.classList.add("is-started");
+
+        // Start car animation.
+
+        startCarAnimation();
+
+    });
+
+
+    /* =================================
+       SCROLL DOWN BUTTON
+    ================================= */
+
+    scrollButton.addEventListener("click", function () {
+
+        if (!scrollUnlocked) {
+            return;
+        }
+
+        coupleSection.scrollIntoView({
+
+            behavior: window.matchMedia(
+                "(prefers-reduced-motion: reduce)"
+            ).matches ? "auto" : "smooth",
+
+            block: "start"
+
+        });
+
+    });
+
+
+    /* =================================
+       INITIAL SCROLL POSITION
+    ================================= */
+
+    window.scrollTo(0, 0);
+
+});
+
+</script>
+
+<!-- =================================
+     SAVE THE DATE - RIBBON & COUNTDOWN
+================================= -->
+
+<script>
+
+(function () {
+
+    var panel = document.getElementById("sdPanel");
+
+    var stage = document.getElementById("sdStage");
+
+    if (!panel || !stage) {
+        return;
+    }
+
+    /* =================================
+       SCALE THE UNTIE TRAVEL TO STAGE
+    ================================= */
+
+    function sizes() {
+
+        var w = stage.getBoundingClientRect().width;
+
+        if (!w) {
+            return;
+        }
+
+        var out = w * 0.7;
+
+        stage.style.setProperty("--outPx", out + "px");
+
+        stage.style.setProperty("--outU", (out * 400 / w) + "px");
+
+    }
+
+    /* =================================
+       UNTIE THE BOW
+    ================================= */
+
+    function untie() {
+
+        if (panel.classList.contains("open")) {
+            return;
+        }
+
+        sizes();
+
+        panel.classList.add("open");
+
+        setTimeout(function () {
+
+            stage.style.display = "none";
+
+        }, 2300);
+
+    }
+
+    stage.addEventListener("click", untie);
+
+    stage.addEventListener("keydown", function (e) {
+
+        if (e.key === "Enter" || e.key === " ") {
+
+            e.preventDefault();
+
+            untie();
+
+        }
+
+    });
+
+    window.addEventListener("resize", sizes);
+
+    sizes();
+
+    /* =================================
+       LIVE COUNTDOWN
+    ================================= */
+
+    var target = new Date(2027, 0, 16, 16, 0, 0).getTime();
+
+    var el = {
+        d: document.getElementById("sdD"),
+        h: document.getElementById("sdH"),
+        m: document.getElementById("sdM"),
+        s: document.getElementById("sdS")
+    };
+
+    if (el.d && el.h && el.m && el.s) {
+
+        function tick() {
+
+            var t = Math.max(
+                0,
+                Math.floor((target - Date.now()) / 1000)
+            );
+
+            el.d.textContent = Math.floor(t / 86400);
+
+            el.h.textContent = Math.floor(t % 86400 / 3600);
+
+            el.m.textContent = Math.floor(t % 3600 / 60);
+
+            el.s.textContent = t % 60;
+
+        }
+
+        tick();
+
+        setInterval(tick, 1000);
+
+    }
+
+})();
+
+</script>
+
+<!-- =================================
+     RSVP FORM SCRIPT (from provided code)
+================================= -->
+<script>
+(function(){
+  var form=document.getElementById('rsvp-form'),
+      details=document.getElementById('details'),
+      thanks=document.getElementById('thanks'),
+      msg=document.getElementById('thanks-msg');
+
+  function attending(){return form.attend.value==='yes'}
+  form.addEventListener('change',function(e){
+    if(e.target.name==='attend'){details.hidden=!attending()}
+    if(e.target.name==='events'){document.getElementById('f-events').classList.remove('invalid')}
+  });
+  ['name','email'].forEach(function(id){
+    document.getElementById(id).addEventListener('input',function(){
+      document.getElementById('f-'+id).classList.remove('invalid');
+    });
+  });
+
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var ok=true,
+        name=form.name.value.trim(),
+        email=form.email.value.trim(),
+        events=[].slice.call(form.querySelectorAll('input[name=events]:checked')).map(function(c){return c.value});
+
+    function flag(id,bad){document.getElementById(id).classList.toggle('invalid',bad);if(bad)ok=false}
+    flag('f-name',!name);
+    flag('f-email',!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+    flag('f-events',attending()&&events.length===0);
+    if(!ok){var first=form.querySelector('.invalid');if(first)first.scrollIntoView({behavior:'smooth',block:'center'});return}
+
+    var data={
+      name:name,email:email,attend:form.attend.value,
+      guests:attending()?Number(form.guests.value):0,
+      events:attending()?events:[],
+      message:form.message.value.trim()
+    };
+    // TODO: send `data` to your server or form service here, e.g. fetch('/your-endpoint',{method:'POST',body:JSON.stringify(data)})
+    console.log('RSVP',data);
+
+    form.hidden=true;
+    var first=name.split(' ')[0];
+    msg.textContent=attending()
+      ? first+', we can’t wait to celebrate with you.'
+      : first+', we’ll miss you, and thank you for letting us know.';
+    thanks.hidden=false;
+    thanks.scrollIntoView({behavior:'smooth',block:'center'});
+  });
+})();
+</script>
+
+</body>
+</html>
